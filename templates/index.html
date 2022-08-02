@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <style>
+        body {
+          background-image: url('MarbleGreen.jpg');
+          background-repeat: no-repeat;
+          background-attachment: fixed; 
+          background-size: 100% 100%;
+        }
+        </style>
+    </head>
+
+    <body>
+       <h1 style="background-color:rgb(139, 238, 176);">Hello Welcome to Theng FY webpage: <b>Predictive modeling for product development.</b></h1>
+       <hr>
+       
+       <h2 style="background-color:rgb(62, 180, 105);">Introduction:</h2>
+       <p>I’ve been working in the audio peripherals industry for years. My team and I are always looking forward to designing and producing excellent products to satisfy customers. In early 2017 my team and I were asked by the management team to investigate and design the <b>most comfortable headphone.</b> It was a challenging mission to accomplish for us because we didn’t have any guidelines or data to start the exploration project. We scrambled for years and learned from scratch to understand how to quantify customers' pain points toward collectable data.  Slowly we noticed that data analytics can assist us through this exploration journey. In this webpage, I will share my experiences on how data analytics can provide good insight to understand customers' needs and establish a design guideline leading toward creating more personalized products. At the end of this exploration project, I have developed predictive modeling to predict the <b>new</b> headphone comfort index even before it has been prototyped and tested.</p>
+
+       <p>Below are the 5 data analytic techniques used in this comfortable Headphone exploration project.</p>
+       
+       <ol type="1">
+        <li>Data Visualization</li>
+        <li>Data Cleaning</li>
+        <li>Classification</li>
+        <li>Machine Learning</li> 
+        <li>Predictive Modeling</li>
+        </ol>
+        
+        <h4 style="background-color:rgba(229, 58, 58, 0.823);"><b>Declaration:</b>Due to some contents of the document being confidential, I can only show the process and concept of data analytic and Predictive modeling. The process and modeling presented in this webpage is offered as a reference tool, based on my experience and knowledge it can be implemented to other industries. However, how data is gathered and analyzed depends on many factors like: the context, the issue, the purpose of the data collection, and organization objective.</h4>
+
+
+        <h2 h1 style="background-color:rgb(62, 180, 105);">Raw Data:</h2>
+        <p>The first step before starting data visualization is to collect feedback from customers especially on those who have pain points when using the products. If a company has already established this database to collect feedback, it will speed up the initial process of data collection. If not, the company should consider whether to start collecting data on its own or get help from an external consultant, it will need enough information to make an informed decision about how to proceed. Another important point for data collection is <b>ensuring accurate and appropriate data is fed into the exploration project.</b> In this webpage, I have used the open source data from <a href="https://www.rtings.com/">Rtings.com</a> (below) as an example of how to perform data visualization and understand the comfort index relationship with other measured features. </p>
+
+
+        <img src='Rtings_Headphone.jpg' alt="Rting website" style="width:auto;height: 350px;;">
+
+        <h3 style="color:rgb(8, 8, 246);">What is the difference between the data?</h3>
+        
+        <p>The Similarity of measured parameters between <a href="https://www.rtings.com/">Rtings.com</a> data and my data are the clamping force and Headphone weight. Rtings.com used these 2 measured parameters to generate a comfort index. For my exploration project, Data visualization has given my team an insight on how to get a better comfort index end result. We have to explore more measured parameters from a Headphone. Therefore, it took me years to develop an <b>additional 10 measured parameters.</b> Examples of additional measured parameters are: headphone cushion foam hardness, Headphone initial diameter, Headband foam thickness and more. </p>
+
+       <h2 h1 style="background-color:Gray;">What Is Moving Average Convergence Divergence (MACD)? </h2>
+        <p>MACD is a trend following momentum indicator which shows the relationship between two moving averages of DBS price. MACD is calculated by subtracting 2 periods of exponential moving average (EMA). Normally, investors will use an EMA period of 26 and 12 days but not limits to other numbers. A nine-day EMA of the MACD called the "signal line," is then plotted on top of the MACD line, which can function as a trigger for buy and sell signals. MACD indicators can be interpreted in several ways, but the more common methods are crossovers, divergences, and rapid rises/falls.
+        Because of MACD is a huge topic to cover and learn, I would like to drop the MACD topic here and back to my focus point “machine learning to predict DBS stock”. Knowing that some people may have an enormous appetite to learn. I’ve added a video below for those who are interested and want to learn more.
+        </p>   
+
+        "<iframe width="720" height="480" src="https://www.youtube.com/embed/LHxiens0cpU?autoplay=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>"
+
+        <h2 style="background-color:Gray;">How to find Signal?</h2>
+        <p> For simplicity, the Key input value for this project is MACD Signal since Signal line is a good indicator to signal buy or sell, 
+            it may assist predictive modeling to predict a better outcome.</p>
+
+        <p>To extract Signal line value, click below finance yahoo. From the graph, bottom left you should be able to see MACD (12, 26, 9). 
+            When moving the cursor along the graph, three values appear in the box. Do record the middle orange color value and input to the predictive box below. 
+        </p>
+
+        <p><a href="https://sg.finance.yahoo.com/chart/D05.SI/#eyJpbnRlcnZhbCI6ImRheSIsInBlcmlvZGljaXR5IjoxLCJ0aW1lVW5pdCI6bnVsbCwiY2FuZGxlV2lkdGgiOjQuNjE2ODIyNDI5OTA2NTQyLCJmbGlwcGVkIjpmYWxzZSwidm9sdW1lVW5kZXJsYXkiOnRydWUsImFkaiI6dHJ1ZSwiY3Jvc3NoYWlyIjp0cnVlLCJjaGFydFR5cGUiOiJsaW5lIiwiZXh0ZW5kZWQiOmZhbHNlLCJtYXJrZXRTZXNzaW9ucyI6e30sImFnZ3JlZ2F0aW9uVHlwZSI6Im9obGMiLCJjaGFydFNjYWxlIjoibGluZWFyIiwic3R1ZGllcyI6eyLigIx2b2wgdW5kcuKAjCI6eyJ0eXBlIjoidm9sIHVuZHIiLCJpbnB1dHMiOnsiaWQiOiLigIx2b2wgdW5kcuKAjCIsImRpc3BsYXkiOiLigIx2b2wgdW5kcuKAjCJ9LCJvdXRwdXRzIjp7IlVwIFZvbHVtZSI6IiMwMGIwNjEiLCJEb3duIFZvbHVtZSI6IiNmZjMzM2EifSwicGFuZWwiOiJjaGFydCIsInBhcmFtZXRlcnMiOnsid2lkdGhGYWN0b3IiOjAuNDUsImNoYXJ0TmFtZSI6ImNoYXJ0In19LCLigIxtYWNk4oCMICgxMiwyNiw5KSI6eyJ0eXBlIjoibWFjZCIsImlucHV0cyI6eyJGYXN0IE1BIFBlcmlvZCI6MTIsIlNsb3cgTUEgUGVyaW9kIjoyNiwiU2lnbmFsIFBlcmlvZCI6OSwiaWQiOiLigIxtYWNk4oCMICgxMiwyNiw5KSIsImRpc3BsYXkiOiLigIxtYWNk4oCMICgxMiwyNiw5KSJ9LCJvdXRwdXRzIjp7Ik1BQ0QiOiIjYWQ2ZWZmIiwiU2lnbmFsIjoiI2ZmYTMzZiIsIkluY3JlYXNpbmcgQmFyIjoiIzc5ZjRiZCIsIkRlY3JlYXNpbmcgQmFyIjoiI2ZmODA4NCJ9LCJwYW5lbCI6IuKAjG1hY2TigIwgKDEyLDI2LDkpIiwicGFyYW1ldGVycyI6eyJjaGFydE5hbWUiOiJjaGFydCJ9fX0sInBhbmVscyI6eyJjaGFydCI6eyJwZXJjZW50IjowLjgsImRpc3BsYXkiOiJEMDUuU0kiLCJjaGFydE5hbWUiOiJjaGFydCIsImluZGV4IjowLCJ5QXhpcyI6eyJuYW1lIjoiY2hhcnQiLCJwb3NpdGlvbiI6bnVsbH0sInlheGlzTEhTIjpbXSwieWF4aXNSSFMiOlsiY2hhcnQiLCLigIx2b2wgdW5kcuKAjCJdfSwi4oCMbWFjZOKAjCAoMTIsMjYsOSkiOnsicGVyY2VudCI6MC4yLCJkaXNwbGF5Ijoi4oCMbWFjZOKAjCAoMTIsMjYsOSkiLCJjaGFydE5hbWUiOiJjaGFydCIsImluZGV4IjoxLCJ5QXhpcyI6eyJuYW1lIjoi4oCMbWFjZOKAjCAoMTIsMjYsOSkiLCJwb3NpdGlvbiI6bnVsbH0sInlheGlzTEhTIjpbXSwieWF4aXNSSFMiOlsi4oCMbWFjZOKAjCAoMTIsMjYsOSkiXX19LCJzZXRTcGFuIjpudWxsLCJsaW5lV2lkdGgiOjIsInN0cmlwZWRCYWNrZ3JvdW5kIjp0cnVlLCJldmVudHMiOnRydWUsImNvbG9yIjoiIzAwODFmMiIsInN0cmlwZWRCYWNrZ3JvdWQiOnRydWUsImV2ZW50TWFwIjp7ImNvcnBvcmF0ZSI6eyJkaXZzIjp0cnVlLCJzcGxpdHMiOnRydWV9LCJzaWdEZXYiOnt9fSwicmFuZ2UiOm51bGwsInN5bWJvbHMiOlt7InN5bWJvbCI6IkQwNS5TSSIsInN5bWJvbE9iamVjdCI6eyJzeW1ib2wiOiJEMDUuU0kiLCJxdW90ZVR5cGUiOiJFUVVJVFkiLCJleGNoYW5nZVRpbWVab25lIjoiQXNpYS9TaW5nYXBvcmUifSwicGVyaW9kaWNpdHkiOjEsImludGVydmFsIjoiZGF5IiwidGltZVVuaXQiOm51bGwsInNldFNwYW4iOm51bGx9XX0-">Visit yahoo finance.com!</a></p>
+
+        <h1 style="background-color:Gray;">Predict DBS</h1>
+        <h2 style="background-color:Red;">Declaration:</h2>
+        <p> This is purely for academic purposes, and not suggesting or 
+            hinting further stock price will either in Bull or Bear market.</p>
+
+           
+
+    
+    <style>
+    
+    table {
+      font-family: arial, sans-serif;
+      border:1px solid black;
+      width: 100%;
+    }
+
+    td, th {
+      border: 1px solid black;
+      text-align: left;
+      padding: 8px;
+    }
+    
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+    </style>
+
+      
+  <h2>Historical table</h2>  
+      
+  <table>
+          <tr>
+            <th>Updated Date </th>
+            <th>Changes Remark and Price Prediction</th>
+            <th>Actual Result</th>
+            <th>Version</th>
+          </tr>
+          <tr>
+            <td>22nd March 2022</td>
+            <td>Updated Stock Price data till 18th March 2022. Predicted DBS price on May 2022 around $29 to $31</td>
+            <td>DBS Stock price was at $30.31 on 25th May</td>
+            <td>Script 1.0</td>
+          </tr>
+
+          <tr>
+            <td>17th May 2022</td>
+            <td>Updated Stock Price data till 11th May 2022. Predicted DBS price for June 2022 around $30.89 to $33.30</td>
+            <td>DBS Stock price was hovering around $29.9 between 13th to 20th June </td>
+            <td>Script 1.0</td>
+          </tr>
+          
+          <tr>
+            <td>15th June 2022</td>
+            <td>Updated Stock Price data till 14th June 2022. Predicted DBS price for July 2022 around $31.26 to 33.52 </td>
+            <td>DBS Stock price was hovering around $29.67 on 15th July</td>
+            <td>Script 1.0</td>
+          </tr>  
+
+          <tr>
+            <td>17th July 2022</td>
+            <td>Updated Stock Price data till 15th July 2022. Predicted DBS price for Aug 2022 around $31.49 to 32.54</td>
+            <td>TBD</td>
+            <td>Script 1.0 </Script></td>
+          </tr>
+
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+
+        </table>
+
+
+
+     <img src="https://www.pandotrip.com/wp-content/uploads/2016/02/Takinoue-980x588.jpg" style="width:auto;height: 360px;">
+
+
+  <h3>Finally, Thank you very much for visiting my webpage. Before leaving this webpage, I have added a Movie clip below "Thor Ragnarok" which is my favourite movie. 
+    Please feedback your thoughts on the predictive model above for stock estimation, Do you Like or Dislike?</h3>
+            
+      <address>
+        Written by <a href="mailto:millerjjjj@msn.com"> ThengMiller</a>.<br> 
+        Feedback by clicking above name.<br>
+      </address>
+            
+  
+
+  <iframe width="450" height="253" src="https://www.youtube.com/embed/ue80QwXMRHg?autoplay=1&mute=1">  # Add you link</iframe>
+
+    </body>
+  </html>
